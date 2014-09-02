@@ -28,6 +28,8 @@ import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -66,6 +68,9 @@ public class MainFrame extends JFrame {
     
     private void browse(){
         JFileChooser fc = new JFileChooser("Buka File");
+        FileFilter filter = new FileNameExtensionFilter("Image", "jpg", "jpeg", "png", "gif");
+        fc.setFileFilter(filter);
+        
         int returnVal = fc.showOpenDialog(this);
         if(returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fc.getSelectedFile();

@@ -41,7 +41,7 @@ public class GrayScale {
     private CountDownLatch latch;
     private ExecutorService executor;
     private BufferedImage src;
-    private BufferedImage grayscale;
+    private volatile BufferedImage grayscale;
     private int grayType;
 
     private void doConvert(int start, int end) {
